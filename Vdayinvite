@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Date Invitation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #e63946;
+    }
+    button {
+      background-color: #a8dadc;
+      border: none;
+      color: #1d3557;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #457b9d;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Be My Valentine?</h1>
+  <p>Click on the options below to answer the questions:</p>
+
+  <button onclick="answerQuestion('yes')">Yes</button>
+  <button onclick="answerQuestion('no')">No</button>
+
+  <p id="response"></p>
+
+  <script>
+    function answerQuestion(answer) {
+      if (answer === 'yes') {
+        document.getElementById('response').innerHTML = "That's wonderful! Where would you like to go for our date?";
+        document.getElementById('options').innerHTML = `
+          <button onclick="chooseLocation('restaurant')">Restaurant</button>
+          <button onclick="chooseLocation('movies')">Movies</button>
+          <button onclick="chooseLocation('park')">Park</button>
+        `;
+      } else {
+        document.getElementById('response').innerHTML = "I understand. Maybe another time!";
+      }
+    }
+
+    function chooseLocation(location) {
+      document.getElementById('response').innerHTML = "Great choice! I'll make reservations.";
+      document.getElementById('options').innerHTML = "";
+    }
+  </script>
+</body>
+</html>
